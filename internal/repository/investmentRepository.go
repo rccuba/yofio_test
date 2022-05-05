@@ -1,7 +1,6 @@
 package repository
 
 import (
-	"errors"
 	"github.com/go-kit/log"
 	"gopkg.in/mgo.v2/bson"
 	"math"
@@ -10,13 +9,6 @@ import (
 	"test_robert_yofio/internal/function"
 	"test_robert_yofio/internal/middleware"
 	"test_robert_yofio/internal/static"
-)
-
-var (
-	ErrResponseObjectExists       = errors.New(static.MsgResponseObjectExists)
-	ErrResponseServerErrorNoID    = errors.New(static.MsgResponseServerErrorNoID)
-	ErrResponseServerErrorWrongID = errors.New(static.MsgResponseServerErrorWrongID)
-	ErrResponseServerErrorNoData  = errors.New(static.MsgResponseServerErrorNoData)
 )
 
 type InvestmentRepository interface {

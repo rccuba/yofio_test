@@ -13,7 +13,6 @@ import (
 
 var (
 	ErrUnauthorizatedInvestment = errors.New(static.MsgUnauthorizatedInvestment)
-	ErrInvalidInvestment        = errors.New(static.MsgInvalidInvestment)
 	IsMultiple100               = regexp.MustCompile(`.00$`).MatchString
 )
 
