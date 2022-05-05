@@ -1,0 +1,47 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "contact": {}
+  },
+  "paths": {
+    "/credit-assignment": {
+      "post": {
+        "description": "Comienza a asignar créditos a partir de un monto y retorna una de las posibles opciones",
+        "consumes": [
+          "text/plain"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "summary": "Asignación de créditos",
+        "parameters": [
+          {
+            "description": "PAYLOAD DE ENTRADA (VALOR ENTERO)",
+            "name": "parameters",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/entity.InvestmentRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {}
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "entity.InvestmentRequest": {
+      "type": "object",
+      "properties": {
+        "investment": {
+          "type": "integer"
+        }
+      }
+    }
+  }
+}

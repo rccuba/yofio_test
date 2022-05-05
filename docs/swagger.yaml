@@ -1,0 +1,30 @@
+definitions:
+  entity.InvestmentRequest:
+    properties:
+      investment:
+        type: integer
+    type: object
+info:
+  contact: {}
+paths:
+  /credit-assignment:
+    post:
+      consumes:
+        - text/plain
+      description: Comienza a asignar créditos a partir de un monto y retorna una
+        de las posibles opciones
+      parameters:
+        - description: PAYLOAD DE ENTRADA (VALOR ENTERO)
+          in: body
+          name: parameters
+          required: true
+          schema:
+            $ref: '#/definitions/entity.InvestmentRequest'
+      produces:
+        - application/json
+      responses:
+        "200":
+          description: OK
+          schema: {}
+      summary: Asignación de créditos
+swagger: "2.0"

@@ -1,0 +1,5 @@
+ts=2022-05-05T02:58:08.1111895Z caller=middleware.go:52 type=SUCCESS URL=/ message="STARTING API..."
+ts=2022-05-05T02:58:08.1201868Z caller=middleware.go:52 type=SUCCESS URL=/ message="STARTING ENDPOINTS..."
+ts=2022-05-05T02:58:08.1291868Z caller=middleware.go:52 type=SUCCESS URL=/ message="STARTING ROUTES..."
+ts=2022-05-05T02:58:08.1411909Z caller=middleware.go:52 type=SUCCESS URL=/ message="STARTING SWAGGER..."
+ts=2022-05-05T02:58:31.5752229Z caller=middleware.go:52 type=SUCCESS message="OPERACION SATISFACTORIA"
