@@ -11,6 +11,3 @@ type Response struct {
 	CreditType500 int32 `json:"“credit_type_500”"`
 	CreditType700 int32 `json:"“credit_type_700”"`
 }
-
-type GenericResponse struct {
-}

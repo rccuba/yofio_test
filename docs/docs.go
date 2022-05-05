@@ -44,6 +44,24 @@ const docTemplate = `{
                     }
                 }
             }
+        },
+        "/statistics": {
+            "get": {
+                "description": "Valores estadisticos a partir de las inversiones y creditos asignados",
+                "consumes": [
+                    "text/plain"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Estadisticas",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {}
+                    }
+                }
+            }
         }
     },
     "definitions": {

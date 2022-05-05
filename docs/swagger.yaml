@@ -10,21 +10,33 @@ paths:
   /credit-assignment:
     post:
       consumes:
-        - text/plain
+      - text/plain
       description: Comienza a asignar créditos a partir de un monto y retorna una
         de las posibles opciones
       parameters:
-        - description: PAYLOAD DE ENTRADA (VALOR ENTERO)
-          in: body
-          name: parameters
-          required: true
-          schema:
-            $ref: '#/definitions/entity.InvestmentRequest'
+      - description: PAYLOAD DE ENTRADA (VALOR ENTERO)
+        in: body
+        name: parameters
+        required: true
+        schema:
+          $ref: '#/definitions/entity.InvestmentRequest'
       produces:
-        - application/json
+      - application/json
       responses:
         "200":
           description: OK
           schema: {}
       summary: Asignación de créditos
+  /statistics:
+    get:
+      consumes:
+      - text/plain
+      description: Valores estadisticos a partir de las inversiones y creditos asignados
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema: {}
+      summary: Estadisticas
 swagger: "2.0"

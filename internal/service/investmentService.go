@@ -10,6 +10,7 @@ import (
 
 type InvestmentService interface {
 	CreditAssignment(context context.Context, data *interface{}) (entity.Response, error, int)
+	Statistics(_ context.Context, data *interface{}) (entity.StatisticsResponse, error, int)
 }
 
 type investmentService struct {
@@ -26,8 +27,18 @@ func NewInvestmentService(repo repository.InvestmentRepository, logger log.Logge
 
 func (i *investmentService) CreditAssignment(_ context.Context, data *interface{}) (entity.Response, error, int) {
 	response, err := i.investmentRepository.CreditAssignment(data, i.logger)
+	status := http.StatusOK
 	if err != nil {
-		return response, err, http.StatusBadRequest
+		status = http.StatusBadRequest
 	}
-	return response, nil, http.StatusOK
+	return response, err, status
+}
+
+func (i *investmentService) Statistics(_ context.Context, _ *interface{}) (entity.StatisticsResponse, error, int) {
+	response, err := i.investmentRepository.Statistics()
+	status := http.StatusOK
+	if err != nil {
+		status = http.StatusBadRequest
+	}
+	return response, err, status
 }

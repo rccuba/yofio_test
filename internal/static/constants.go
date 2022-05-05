@@ -7,6 +7,11 @@ const (
 	LOG_FILE         string = "info.log"
 	APP_PORT         string = "APP_PORT"
 	APP_HOST         string = "APP_HOST"
+	MONGO_HOST       string = "MONGO_HOST"
+	MONGO_DATABASE   string = "MONGO_DATABASE"
+	MONGO_PORT       string = "MONGO_PORT"
+	MONGO_USER       string = "MONGO_USER"
+	MONGO_PASSWORD   string = "MONGO_PASSWORD"
 	//messages
 	MsgResponseStartProcess       string = "Start process -->   "
 	MsgResponseStartApplication   string = "Starting the application...."
@@ -15,6 +20,7 @@ const (
 	MsgResponseStartingEndpoints  string = "STARTING ENDPOINTS..."
 	MsgResponseStartingRoutes     string = "STARTING ROUTES..."
 	MsgResponseStartingSwagger    string = "STARTING SWAGGER..."
+	MsgResponseConnectedMongoDB   string = "Connected to MongoDB!"
 	MsgResponseObjectExists       string = "OBJETO EXISTENTE"
 	MsgResponseServerErrorWrongID string = "ERROR DE SERVIDOR: ID CON FORMATO DE VALOR INCORRECTO"
 	MsgResponseServerErrorNoID    string = "ERROR DE SERVIDOR: ID INEXISTENTE"
@@ -34,10 +40,12 @@ const (
 	MsgTestUndeliveredAmount        string = "PROBANDO VALOR INVALIDO (MENOR QUE 300) DE INVERSION"
 	MsgTestUnauthorizatedInvestment string = "PROBANDO VALOR NO AUTORIZADO (NO MULTIPLO DE 100) DE INVERSION"
 	MsgTestUnsupportedHTTPMethod    string = "PROBANDO METODO HTTP NO SOPORTADO"
+	MsgTestStatistics               string = "PROBANDO ESTADISTICAS"
 	//URLs
 	URLStartingNow      string = "/"
 	URLApi              string = "/api"
 	URLCreditAssignment string = "/credit-assignment"
+	URLStatistics       string = "/statistics"
 	//types responses
 	ERROR   string = "ERROR"
 	SUCCESS string = "SUCCESS"
@@ -53,4 +61,10 @@ const (
 	SchemaHttp string = "http"
 	//misc
 	ValueEmpty string = ""
+	//collectios
+	CollectionCreditAssignment string = "credit_assignment"
+	//fields
+	FieldInvestment string = "investment"
+	//sorts
+	SortAsc string = ""
 )

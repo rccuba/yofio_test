@@ -11,11 +11,13 @@ import (
 
 type InvestmentEndpoints struct {
 	CreditAssignmentEndpoint endpoint.Endpoint
+	StatisticsEndpoint       endpoint.Endpoint
 }
 
 func MakeInvestmentEndpoints(is *service.InvestmentService, im middleware.InvestmentMiddleware) InvestmentEndpoints {
 	return InvestmentEndpoints{
 		CreditAssignmentEndpoint: wrapEndpoint(makeCreditAssignmentEndpoint(*is), []endpoint.Middleware{im.AuthorizationInvestment()}),
+		StatisticsEndpoint:       wrapEndpoint(makeStatisticsEndpoint(*is), nil),
 	}
 }
 
@@ -32,6 +34,13 @@ func makeCreditAssignmentEndpoint(is service.InvestmentService) endpoint.Endpoin
 			Message:    msg,
 		}
 		return investmentResponse, err
+	}
+}
+
+func makeStatisticsEndpoint(is service.InvestmentService) endpoint.Endpoint {
+	return func(ctx context.Context, request interface{}) (interface{}, error) {
+		response, err, _ := is.Statistics(ctx, &request)
+		return response, err
 	}
 }
 

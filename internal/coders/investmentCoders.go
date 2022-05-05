@@ -7,6 +7,11 @@ import (
 	"test_robert_yofio/internal/entity"
 )
 
+func DecodeRequest(_ context.Context, _ *http.Request) (interface{}, error) {
+	var req entity.GenericRequest
+	return req, nil
+}
+
 func DecodeInvestmentRequest(_ context.Context, r *http.Request) (interface{}, error) {
 	var req entity.InvestmentRequest
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {

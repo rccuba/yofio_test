@@ -21,3 +21,19 @@ func (a *App) CreditAssignment(options []httptransport.ServerOption) *httptransp
 		options...,
 	)
 }
+
+// Statistics godoc
+// @Summary Estadisticas
+// @Description Valores estadisticos a partir de las inversiones y creditos asignados
+// @Accept  plain
+// @Produce  json
+// @Success 200 {object} entity.InterfaceAPI
+// @Router /statistics [get]
+func (a *App) Statistics(options []httptransport.ServerOption) *httptransport.Server {
+	return httptransport.NewServer(
+		a.InvestmentEndpoints.StatisticsEndpoint,
+		coders.DecodeRequest,
+		coders.RespondWithJSON,
+		options...,
+	)
+}
